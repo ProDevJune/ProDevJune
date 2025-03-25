@@ -1,16 +1,40 @@
-# Set default behavior to automatically normalize line endings.
-* text=auto
+# ------------------------------
+# 기본: 텍스트 파일은 자동 줄바꿈 처리 (커밋 시 LF로 통일)
+* text=auto eol=lf
 
-# Force bash scripts to always use LF line endings so that if a repo is accessed
-# in Unix via a file share from Windows, the scripts will work.
-*.sh text eol=lf
+# ------------------------------
+# 스크립트 파일: 플랫폼별 줄바꿈 강제
+*.sh       text eol=lf
+*.bash     text eol=lf
+*.zsh      text eol=lf
 
-# Force batch scripts to always use CRLF line endings so that if a repo is accessed
-# in Windows via a file share from Linux, the scripts will work.
-*.{cmd,[cC][mM][dD]} text eol=crlf
-*.{bat,[bB][aA][tT]} text eol=crlf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
 
-# Denote all files that are truly binary and should not be modified.
+# ------------------------------
+# 마크다운, 설정 파일 등: LF 고정
+*.md       text eol=lf
+*.markdown text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.json     text eol=lf
+*.html     text eol=lf
+*.css      text eol=lf
+*.js       text eol=lf
+*.ts       text eol=lf
+
+# ------------------------------
+# 바이너리 파일: 줄바꿈 변환 금지
 *.png binary
 *.jpg binary
+*.jpeg binary
+*.gif binary
 *.ico binary
+*.pdf binary
+*.zip binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# ------------------------------
+# 기타: 예외 또는 명시 필요 시 개별 항목 추가
