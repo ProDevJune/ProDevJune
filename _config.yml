@@ -13,7 +13,7 @@ description: AI + Programming Lab
 tagline: Development + AI Toolkit
 
 # 배포 주소 설정
-url: "https://prodevjune.github.io"
+url: "https://ProDevJune.github.io"
 baseurl: "/ProDevJune"
 
 # 소셜 정보 (footer와 SEO에 사용)
