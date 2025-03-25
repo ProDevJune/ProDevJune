@@ -14,7 +14,7 @@ tags:
   - 패스트캠퍼스업스테이지부트캠프
 ---
 
-![커널 아카데미 AI 부트캠프](/ProDevJune/assets/img/bootcamp-header.png)
+![커널 아카데미 AI 부트캠프](/assets/img/bootcamp-header.png)
 
 # 📘 Kernel Academy AI 부트캠프 안내서
 
