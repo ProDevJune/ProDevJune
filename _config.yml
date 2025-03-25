@@ -13,8 +13,8 @@ description: AI + Programming Lab
 tagline: Development + AI Toolkit
 
 # 배포 주소 설정
-url: "https://ProDevJune.github.io"
-baseurl: "/ProDevJune"
+url: 'https://ProDevJune.github.io'
+baseurl: '/ProDevJune'
 
 # 소셜 정보 (footer와 SEO에 사용)
 github:
@@ -24,6 +24,9 @@ social:
   email: gd2u37@gmail.com
   links:
     - https://github.com/ProDevJune
+
+# 프로필 아바타 이미지 설정
+avatar: /assets/img/avatar.png
 
 # 색상 모드 (시스템 기본 또는 강제 설정 가능)
 theme_mode: # [light | dark], 기본은 시스템 설정 따름
