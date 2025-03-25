@@ -1,0 +1,30 @@
+{
+  "name": "prodevjune-blog",
+  "version": "1.0.0",
+  "description": "Chirpy 기반 + Minimal Mistakes 기능을 통합한 GitHub Pages 블로그",
+  "author": "ProDevJune",
+  "license": "MIT",
+  "scripts": {
+    "lint": "pnpm lint:js && pnpm lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.{css,scss}\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.16.0",
+    "stylelint-config-standard": "^37.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0"
+  },
+  "lint-staged": {
+    "*.{js,css,scss,md,yml,yaml}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
