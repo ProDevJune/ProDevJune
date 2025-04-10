@@ -2,7 +2,7 @@
 title: '송원호 강사님의 캐글 실전 가이드'
 layout: page
 icon: fas fa-laptop-code
-permalink: /ai-bootcamp/songwonho-kaggle/
+permalink: /ai-bootcamp/songwonho-kaggle-guide/
 toc: true
 tags:
   - 송원호
