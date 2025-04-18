@@ -1,23 +1,19 @@
 ---
-title: '김태균 강사님의 컴퓨터 공학 개론 주간 요약'
-category: 컴퓨터공학
-difficulty: beginner
-status: completed
-learning_goal: 자료구조, 알고리즘, 데이터베이스, 리눅스, 네트워크 기초 이해
-duration_estimate: 5일
-prerequisite: Python 기초
+title: '김태균 강사님의 컴퓨터 공학 개론'
+layout: page
+icon: fas fa-laptop-code
+permalink: /ai-bootcamp/kimtaegyun-computer-science-guide/
+toc: true
 tags:
-  [
-    AI부트캠프,
-    컴퓨터공학,
-    자료구조,
-    알고리즘,
-    데이터베이스,
-    리눅스,
-    네트워크,
-    소프트웨어공학,
-    김태균,
-  ]
+  - 김태균
+  - 컴퓨터공학
+  - AI부트캠프
+  - FastCampus
+  - 자료구조
+  - 알고리즘
+  - 데이터베이스
+  - 리눅스
+  - 네트워크
 ---
 
 # 💻 김태균 강사님의 컴퓨터 공학 개론 (2025년 4월 14일~18일)
