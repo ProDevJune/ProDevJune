@@ -2,7 +2,7 @@
 title: '김태균 강사님의 컴퓨터 공학 개론'
 layout: page
 icon: fas fa-laptop-code
-permalink: /ai-bootcamp/kimtaegyun-computer-science-guide/
+permalink: /ai-bootcamp/kimtaegyun-computer-science/
 toc: true
 tags:
   - 김태균
