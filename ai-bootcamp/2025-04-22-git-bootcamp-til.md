@@ -1,0 +1,157 @@
+---
+title: "TIL: Git 수업 정리 (merge까지)"
+date: 2025-04-22
+category: "Version Control"
+tags: [git, TIL, fastcampus, merge, github]
+difficulty: "기초~중급"
+learning_goal: "Git의 기본 개념부터 merge까지 실습을 통해 확실히 이해"
+duration_estimate: "3시간"
+status: "complete"
+---
+
+# 📘 TIL: Git에 대한 이해와 사용법 (FastCampus AI Bootcamp)
+
+## 👨‍🏫 강사: 최우영  
+## 🗓️ 일시: 2025년 4월 22일  
+## 🧭 주제: Git의 정확한 사용법 및 실습 - `merge`까지
+
+---
+
+## 💡 오늘 배운 내용 개요
+
+- Git의 목적과 버전 관리 개념
+- Git 설치 및 초기 환경 설정
+- 저장소(Local, Remote)의 개념과 차이
+- 브랜치 생성, 이동, 병합(Merge)
+- 커밋의 역할과 작성법
+- GitHub Pages를 이용한 정적 사이트 배포
+- Git 실습: 저장소 생성, 브랜치 실습, 충돌 해결 등
+
+---
+
+## 🧱 1교시 - Git 환경 설정 및 도구 소개
+
+### 🔧 기본 설정
+
+```bash
+git config --global user.name "username"
+git config --global user.email "useremail@example.com"
+
+# 기본 에디터를 Notepad++로 설정 (Windows 환경)
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+# git log 출력 시 cat 명령어를 pager로 사용
+git config --global core.pager cat
+```
+
+> 위 설정을 통해 복잡한 에디터나 less 대신, 간단한 환경에서 git 커밋과 로그를 빠르게 확인 가능.
+
+---
+
+## 📚 2교시 - Git의 철학과 개념 이해
+
+- Git은 **스냅샷 기반** 버전 관리 시스템
+- Git은 분산형 버전 관리 시스템(DVCS)
+- 로컬 저장소 구조: `Working Directory` → `Staging Area` → `Repository`
+- Git의 핵심 객체: `commit`, `blob`, `tree`, `tag`
+
+---
+
+## 🛠️ 3교시 - Git 기본 사용법 실습
+
+```bash
+git init
+git status
+git add 파일명
+git commit -m "설명 메시지"
+git log
+```
+
+---
+
+## 🧩 4-5교시 - 저장소의 필수 구성요소
+
+- `.git` 폴더 구조: HEAD, objects, refs 등
+- `.gitignore`의 필요성과 설정
+- 프로젝트 초기화 시 README.md, LICENSE, .gitignore 파일 구성
+
+---
+
+## 🧪 6-7교시 - Git 저장소 실습
+
+### 🔗 원격 저장소 연결
+```bash
+git remote add origin https://github.com/username/repository.git
+git push -u origin main
+```
+
+### 🌿 브랜치 실습
+
+```bash
+git branch feature/login
+git switch feature/login
+git commit -m "login 기능 추가"
+git switch main
+git merge feature/login
+```
+
+- 병합 방식: Fast-forward vs 3-way Merge 실습
+- 충돌 상황을 만들고 해결 (수동 수정 → add → commit)
+
+---
+
+## 🔄 8교시 - pre-commit & 정적 사이트 배포
+
+- `pre-commit` 훅의 개념 및 도구 소개 (예: 코드 스타일 검사 자동화)
+- `GitHub Pages`를 활용한 정적 페이지 배포 실습
+
+```bash
+# gh-pages 브랜치 생성 및 커밋 후 배포
+git checkout -b gh-pages
+git push origin gh-pages
+# GitHub > Settings > Pages 설정
+```
+
+---
+
+## 🧠 느낀 점
+
+> Git을 실무에서 사용한 경험이 있더라도, 내부 구조나 동작 방식을 정리하며 학습하는 것이 훨씬 더 체계적이라는 점을 느꼈다. 특히 에디터 설정이나 pager 조정처럼 개발 환경을 효율화하는 팁들이 매우 유용했다. 다음에는 `rebase`, `stash`, `reset` 등의 고급 기능도 TIL로 정리해보고 싶다.
+
+---
+
+## 📌 핵심 커맨드 요약
+
+```bash
+# 설정
+git config --global user.name "username"
+git config --global user.email "useremail@example.com"
+git config --global core.editor "notepad++"
+git config --global core.pager cat
+
+# 작업 흐름
+git status
+git add .
+git commit -m "메시지"
+
+# 브랜치
+git branch feature/name
+git switch feature/name
+git merge feature/name
+
+# 원격 저장소
+git remote add origin URL
+git push -u origin main
+
+# 충돌 해결
+git diff
+git mergetool
+```
+
+---
+
+## 🔗 참고 링크
+
+- [Pro Git Book](https://git-scm.com/book/en/v2)
+- [Git 공식 문서](https://git-scm.com/doc)
+- [GitHub Pages 공식 안내](https://pages.github.com/)
