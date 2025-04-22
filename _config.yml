@@ -66,3 +66,6 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+
+sass:
+  style: compressed
