@@ -18,8 +18,6 @@ tags:
   - AI부트캠프
 ---
 
-![NLP 경진대회](/assets/img/nlp-competition-header.png)
-
 # 🗣️ NLP 경진대회 결과 발표 - 대화 요약 모델 개발
 
 > **5조 - 티끌 모아 Tech**: "각자의 작은 기술이 모여 힘을 발휘한다!"
