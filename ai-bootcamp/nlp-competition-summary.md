@@ -1,6 +1,6 @@
 ---
-title: 'NLP 경진대회 결과 발표 - 대화 요약 모델 개발'
-layout: page
+title: 'NLP 경진대회 결과 발표'
+layout: page  
 icon: fas fa-comments
 permalink: /ai-bootcamp/nlp-competition-summary/
 toc: true
@@ -11,10 +11,6 @@ tags:
   - KoBART
   - 경진대회
   - 팀프로젝트
-  - BackTranslation
-  - ROUGE
-  - PyTorch
-  - Transformers
   - AI부트캠프
 ---
 
@@ -54,14 +50,6 @@ tags:
 
 ### 🛠️ 협업 도구 및 방식
 
-```mermaid
-graph TD
-    A[회의 및 아이디어 공유] --> B[Zoom & Slack]
-    C[TO-DO & 문서화] --> D[GitHub Issue & docs]
-    E[실험 정리] --> F[WandB & Notion]
-    G[코드 작성] --> H[Claude Code, Gemini CLI, ChatGPT]
-```
-
 - **커뮤니케이션**: Zoom, Slack
 - **프로젝트 관리**: GitHub Issue, Notion
 - **실험 추적**: WandB
@@ -73,18 +61,15 @@ graph TD
 
 ### 1️⃣ 개발 환경 구축
 
-```python
-# 주요 라이브러리 및 버전
-Python 3.11 (conda 가상환경)
-PyTorch 2.6.0
-transformers 4.54.0
-pytorch-lightning 2.5.2
-rouge, rouge-score (평가 metric)
-wandb (실험 관리)
-unsloth, gradio, evaluate (추론/서빙/평가)
-pandas, numpy, tqdm (데이터 처리/분석)
-kiwipiepy (형태소 분석, 한국어 전처리)
-```
+주요 라이브러리 및 버전:
+- Python 3.11 (conda 가상환경)
+- PyTorch 2.6.0
+- transformers 4.54.0
+- pytorch-lightning 2.5.2
+- rouge, rouge-score (평가 metric)
+- wandb (실험 관리)
+- pandas, numpy, tqdm (데이터 처리/분석)
+- kiwipiepy (형태소 분석, 한국어 전처리)
 
 ### 2️⃣ 데이터 분석 (EDA)
 
@@ -99,11 +84,9 @@ kiwipiepy (형태소 분석, 한국어 전처리)
 
 #### 🔍 토큰 수 분포 분석
 
-```python
-# 요약문 토큰 수 분포 특성
-train/val: 주로 20~40 토큰
-test: 40~60 토큰에 집중, 100개 이상 토큰도 일부 존재
-```
+요약문 토큰 수 분포 특성:
+- train/val: 주로 20~40 토큰
+- test: 40~60 토큰에 집중, 100개 이상 토큰도 일부 존재
 
 #### 📈 대화문-요약문 길이 상관관계
 
@@ -115,41 +98,22 @@ test: 40~60 토큰에 집중, 100개 이상 토큰도 일부 존재
 
 #### 🧹 텍스트 정제
 
-```python
-def clean_text(text: str) -> str:
-    # 줄바꿈 표현 통일
-    text = text.replace("\\n", "\n").replace("<br>", "\n")
-    
-    # 특이 케이스 처리
-    text = text.replace("ㅎㅎ", "나도 행복해.")
-    
-    # 자음/모음 약어 제거 (ㅋㅋ, ㅇㅋ, ㅜㅜ 등)
-    text = re.sub(r"\b[ㄱ-ㅎㅏ-ㅣ]{2,}\b", "", text)
-    
-    # 중복 공백 제거
-    text = re.sub(r"\s+", " ", text)
-    
-    return text.strip()
-```
+- **줄바꿈 표현 통일**: \\n, <br> 등을 \n으로 통일
+- **특이 케이스 처리**: 'ㅎㅎ'를 '나도 행복해.'로 대체
+- **자음/모음 약어 제거**: ㅋㅋ, ㅇㅋ, ㅜㅜ 등 제거
+- **중복 공백 제거**: 여러 공백을 하나로 통일
 
 #### 🔧 지시표현 보완 및 프롬프트 추가
 
 - **지시어 치환**: "그 사람", "이것" 등을 직전 발화자 정보로 대체
-- **메타정보 프롬프트**: `#Topic#`, `#Dialogue#` 등 special token 연동
+- **메타정보 프롬프트**: #Topic#, #Dialogue# 등 special token 연동
 - **BART 포맷 변환**: bos_token, eos_token에 맞게 인코더/디코더 입력 구성
 
 ### 4️⃣ 데이터 증강 (Back Translation)
 
 #### 🌐 Solar API를 활용한 역번역
 
-```python
-# 한국어 → 영어 → 일본어 → 한국어 순서로 Back Translation
-def back_translate_pipeline(text):
-    ko_to_en = translate_solar_api(text, "ko", "en")
-    en_to_ja = translate_solar_api(ko_to_en, "en", "ja") 
-    ja_to_ko = translate_solar_api(en_to_ja, "ja", "ko")
-    return ja_to_ko
-```
+한국어 → 영어 → 일본어 → 한국어 순서로 Back Translation 진행
 
 **증강 효과:**
 - 기존 데이터셋을 2배로 확장
@@ -166,17 +130,9 @@ def back_translate_pipeline(text):
 
 #### 🧠 모델 아키텍처
 
-```python
-# HuggingFace BartForConditionalGeneration 활용
-model_name = "digit82/kobart-summarization"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = BartForConditionalGeneration.from_pretrained(model_name)
-
-# Special Token 처리
-special_tokens = ["#Person1#", "#Person2#", "#PhoneNumber#", ...]
-tokenizer.add_special_tokens({"additional_special_tokens": special_tokens})
-model.resize_token_embeddings(len(tokenizer))
-```
+- HuggingFace BartForConditionalGeneration 활용
+- 모델명: digit82/kobart-summarization
+- Special Token 처리: #Person1#, #Person2#, #PhoneNumber# 등 추가
 
 #### ⚙️ 하이퍼파라미터 최적화
 
@@ -189,25 +145,6 @@ model.resize_token_embeddings(len(tokenizer))
 
 > **핵심 발견**: 대화문 앞부분 중심의 정보만 활용하는 것이 요약 성능에 유리
 
-### 6️⃣ 추론 및 제출
-
-#### 🎯 추론 파이프라인
-
-```python
-with torch.no_grad():
-    for item in tqdm(dataloader):
-        generated_ids = model.generate(
-            input_ids=item['input_ids'].to(device),
-            attention_mask=item['attention_mask'].to(device),
-            early_stopping=True,
-            max_length=200,
-            num_beams=2,
-            length_penalty=1.0
-        )
-        result = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
-        summaries.append(result)
-```
-
 ---
 
 ## 💡 주요 인사이트 및 학습
@@ -215,7 +152,7 @@ with torch.no_grad():
 ### 🚫 데이터 전처리의 역설
 
 **문제 상황:**
-- 데이터에서 `\n`, `<br>`, `...`, `ㅎㅎ` 등 전처리가 필요해 보이는 요소들 발견
+- 데이터에서 \n, <br>, ..., ㅎㅎ 등 전처리가 필요해 보이는 요소들 발견
 - 대괄호([])로 감싸진 문장들의 화자 분리 필요성 인식
 
 **예상과 다른 결과:**
@@ -278,7 +215,7 @@ with torch.no_grad():
 > 요약이라는 Task를 딥러닝으로 해결하는 기법을 강의로 듣고 AI의 타산업의 적용이라는 주제를 깊이 고민할 수 있었다. 2인 대화록에서 요약을 끌어내는 Task란 인간만이 가진 함축적 사고력의 결과를 담아야 하는 주제라 심도있는 문제라는 걸 배우게 되었다.
 
 #### 👤 이영준
-> 자동화를 구축하여 다양한 실험을 하려고 하였습니다. 두 대형 모델을 사용해서 실험을 하려고 며칠을 고생하면서 했지만, 끝내 Claude MCP가 해결 못하는 부분이 있어서 해당 작업은 포기하고, 조에서 공통으로 사용하는 것으로 하게 되었습니다. 오랜시간 공들인 것이 허사가 된 부분이 있어서 아쉽습니다.
+> 자동화를 구축하여 다양한 실험을 하려고 하였습니다. 두 대형 모델을 사용해서 실험을 하려고 며칠을 고생하면서 했지만, 끝내 Claude MCP가 해결 못하는 부분이 있어서 해당 작업은 포기하고, 조에서 공통으로 사용하는 것으로 하게 되었습니다.
 
 #### 👤 조은별
 > Solar API로 프롬프트 기반 Back Translation을 직접 실험해보면서, 프롬프트의 작은 차이만으로도 결과 품질이 크게 달라진다는 점을 실감했다. 모델이 다양한 대화와 요약 데이터를 학습해 자동으로 요약을 생성하는 과정에서, 정확하고 구조화된 프롬프트가 성능에 매우 중요하다는 점을 확인했다.
@@ -324,7 +261,7 @@ with torch.no_grad():
 
 ### 🛠️ 주요 라이브러리
 
-```python
+```
 transformers==4.54.0
 pytorch-lightning==2.5.2
 torch==2.6.0
@@ -337,7 +274,7 @@ numpy
 
 ### 📊 최종 성능 지표
 
-```python
+```
 Final ROUGE Scores:
 ├── ROUGE-1: 0.5535
 ├── ROUGE-2: 0.3487  
