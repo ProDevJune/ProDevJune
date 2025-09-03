@@ -221,7 +221,7 @@ def get_personalized_response(self, user_id: int, message: str) -> str:
 
 ### 🏠 홈 페이지 - 퀵 스타트 카드
 
-![홈 인터페이스](/assets/img/langchain-project/streamlit-home-interface.png){: width="600px"}
+<img src="/assets/img/langchain-project/streamlit-home-interface.png" width="600" alt="홈 인터페이스">
 
 **LangChain Chain을 활용한 기능별 모듈화:**
 - **AI 채팅**: 실시간 영어 학습 대화
@@ -230,7 +230,7 @@ def get_personalized_response(self, user_id: int, message: str) -> str:
 
 ### 💬 AI 채팅 - LangChain Memory 연동
 
-![AI 채팅 인터페이스](/assets/img/langchain-project/streamlit-ai-chat-interface.png){: width="600px"}
+<img src="/assets/img/langchain-project/streamlit-ai-chat-interface.png" width="600" alt="AI 채팅 인터페이스">
 
 **LangChain Memory 시스템의 실제 구현:**
 ```python
@@ -263,7 +263,7 @@ class ConversationChain:
 
 ### 📊 학습 대시보드 - 데이터 분석 및 시각화
 
-![학습 대시보드](/assets/img/langchain-project/streamlit-learning-dashboard.png){: width="600px"}
+<img src="/assets/img/langchain-project/streamlit-learning-dashboard.png" width="600" alt="학습 대시보드">
 
 **LangChain Tool을 활용한 학습 데이터 분석:**
 - 총 채팅 수, 문법 검사 수, 어휘 분석 수
@@ -272,7 +272,7 @@ class ConversationChain:
 
 ### ✏️ 문법 검사 - AI 기반 분석
 
-![문법 검사 인터페이스](/assets/img/langchain-project/streamlit-grammar-check.png){: width="600px"}
+<img src="/assets/img/langchain-project/streamlit-grammar-check.png" width="600" alt="문법 검사 인터페이스">
 
 **LangChain PromptTemplate을 활용한 전문적인 문법 검사:**
 ```python
