@@ -4,9 +4,8 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.2", ">= 7.2.4"
 
-# 코드 하이라이팅 및 렌더링 개선
-gem "rouge", "~> 4.0"
-gem "jekyll-syntax-highlighter", "~> 0.1"
+# Chirpy 테마에서 자동으로 관리됨
+# 추가 gem 설정 불필요
 
 gem "html-proofer", "~> 5.0", group: :test
 
