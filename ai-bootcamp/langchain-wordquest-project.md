@@ -221,7 +221,13 @@ def get_personalized_response(self, user_id: int, message: str) -> str:
 
 ### 🏠 홈 페이지 - 퀵 스타트 카드
 
-<img src="/assets/img/langchain-project/streamlit-home-interface.png" width="600" alt="홈 인터페이스">
+![홈 인터페이스](/assets/img/langchain-project/streamlit-home-interface.png)
+
+**홈 페이지의 주요 기능:**
+- **웰컴 메시지**: 개인화된 환영 화면
+- **퀵 스타트 카드**: 주요 기능으로의 빠른 접근
+- **최근 활동**: 사용자의 학습 활동 요약
+- **AI 상태 표시**: OpenAI 및 Solar API 연결 상태
 
 **LangChain Chain을 활용한 기능별 모듈화:**
 - **AI 채팅**: 실시간 영어 학습 대화
@@ -230,7 +236,10 @@ def get_personalized_response(self, user_id: int, message: str) -> str:
 
 ### 💬 AI 채팅 - LangChain Memory 연동
 
-<img src="/assets/img/langchain-project/streamlit-ai-chat-interface.png" width="600" alt="AI 채팅 인터페이스">
+![AI 채팅 인터페이스](/assets/img/langchain-project/streamlit-ai-chat-interface.png)
+
+**AI 채팅 상세 기능:**
+![AI 채팅 상세 기능](/assets/img/langchain-project/streamlit-ai-chat-detail.png)
 
 **LangChain Memory 시스템의 실제 구현:**
 ```python
@@ -263,7 +272,7 @@ class ConversationChain:
 
 ### 📊 학습 대시보드 - 데이터 분석 및 시각화
 
-<img src="/assets/img/langchain-project/streamlit-learning-dashboard.png" width="600" alt="학습 대시보드">
+![학습 대시보드](/assets/img/langchain-project/streamlit-learning-dashboard.png)
 
 **LangChain Tool을 활용한 학습 데이터 분석:**
 - 총 채팅 수, 문법 검사 수, 어휘 분석 수
@@ -272,7 +281,10 @@ class ConversationChain:
 
 ### ✏️ 문법 검사 - AI 기반 분석
 
-<img src="/assets/img/langchain-project/streamlit-grammar-check.png" width="600" alt="문법 검사 인터페이스">
+![문법 검사 인터페이스](/assets/img/langchain-project/streamlit-grammar-check.png)
+
+**문법 검사 상세 기능:**
+![문법 검사 상세 기능](/assets/img/langchain-project/streamlit-grammar-check-detail.png)
 
 **LangChain PromptTemplate을 활용한 전문적인 문법 검사:**
 ```python
@@ -298,7 +310,10 @@ def check_grammar(self, sentence: str, user_id: int) -> dict:
 
 ### 📚 어휘 도움 - 컨텍스트 기반 학습
 
-![어휘 도움 인터페이스](/assets/img/langchain-project/streamlit-vocabulary-help.png){: width="600px"}
+![어휘 도움 인터페이스](/assets/img/langchain-project/streamlit-vocabulary-help.png)
+
+**어휘 도움 상세 기능:**
+![어휘 도움 상세 기능](/assets/img/langchain-project/streamlit-vocabulary-help-detail.png)
 
 **LangChain RAG 시스템을 활용한 어휘 분석:**
 - 영어 텍스트 입력 시 어휘 수준 분석
@@ -307,7 +322,7 @@ def check_grammar(self, sentence: str, user_id: int) -> dict:
 
 ### 👤 프로필 관리 - 개인화된 학습 경험
 
-![프로필 인터페이스](/assets/img/langchain-project/streamlit-profile-interface.png){: width="600px"}
+![프로필 인터페이스](/assets/img/langchain-project/streamlit-profile-interface.png)
 
 **사용자별 학습 데이터 관리:**
 - 개인 학습 통계 및 진도 분석
@@ -320,7 +335,7 @@ def check_grammar(self, sentence: str, user_id: int) -> dict:
 
 ### 📝 회원가입 - 보안 강화
 
-![회원가입 인터페이스](/assets/img/langchain-project/streamlit-signup-interface.png){: width="600px"}
+![회원가입 인터페이스](/assets/img/langchain-project/streamlit-signup-interface.png)
 
 **LangChain을 활용한 입력 검증 및 보안:**
 ```python
@@ -355,7 +370,7 @@ def validate_password_strength(self, password: str) -> List[str]:
 
 ### 🔑 로그인 - JWT 토큰 기반 인증
 
-![로그인 인터페이스](/assets/img/langchain-project/streamlit-login-interface.png){: width="600px"}
+![로그인 인터페이스](/assets/img/langchain-project/streamlit-login-interface.png)
 
 **보안 강화된 인증 시스템:**
 - bcrypt를 활용한 비밀번호 해싱
@@ -368,7 +383,7 @@ def validate_password_strength(self, password: str) -> List[str]:
 
 ### 🐛 디버그 모드 - 시스템 상태 모니터링
 
-![디버그 모드](/assets/img/langchain-project/streamlit-debug-mode.png){: width="500px"}
+![디버그 모드](/assets/img/langchain-project/streamlit-debug-mode.png)
 
 **LangChain 실행 상태 실시간 모니터링:**
 - 사용자 ID, 인증 상태, 현재 페이지
