@@ -28,7 +28,7 @@ tags:
 ## 📚 프로젝트 개요
 
 ### 🎯 과제 목표
-Upstage AI Lab 7기 개인 과제의 3주차 요구사항을 충족하는 **실용적인 AI 애플리케이션**을 LangChain을 활용하여 구현했습니다.
+Upstage AI Lab 13기 개인 과제의 3주차 요구사항을 충족하는 **실용적인 AI 애플리케이션**을 LangChain을 활용하여 구현했습니다.
 
 **핵심 요구사항:**
 - ✅ LangChain의 주요 기능 통합 (Chain, Memory, Tool, Agent)
@@ -542,8 +542,8 @@ def robust_chain_execution(self, chain, inputs: dict) -> str:
 3. **확장성**: 모듈화된 구조로 새로운 기능 추가 용이
 4. **사용자 중심**: AI 기술을 사용자 경험 향상에 집중
 
-**Upstage AI Lab 7기**에서 배운 LangChain 지식을 바탕으로, 앞으로 더욱 혁신적이고 실용적인 AI 애플리케이션을 개발해 나가겠습니다! 🚀
+**Upstage AI Lab 13기**에서 배운 LangChain 지식을 바탕으로, 앞으로 더욱 혁신적이고 실용적인 AI 애플리케이션을 개발해 나가겠습니다! 🚀
 
 ---
 
-*이 블로그는 Upstage AI Lab 7기 개인 과제의 일환으로 작성되었습니다.*
+*이 블로그는 Upstage AI Lab 13기 개인 과제의 일환으로 작성되었습니다.*
