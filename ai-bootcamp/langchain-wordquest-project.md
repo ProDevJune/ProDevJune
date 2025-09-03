@@ -19,8 +19,6 @@ tags:
   - 패스트캠퍼스
 ---
 
-# 🤖 LangChain 개인 과제: WordQuest Claude Integration 프로젝트 완성기
-
 > **"LangChain의 모든 기능을 활용하여 실용적인 영어 학습 AI 시스템을 구축하다"**
 
 ---
