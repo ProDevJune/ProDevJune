@@ -125,13 +125,16 @@ param_grid = {
 
 ### 모델 성능 비교 시각화
 
-![모델 성능 비교 차트](/assets/img/model_performance_comparison.png)
+<img src="/ProDevJune/assets/img/model_performance_comparison.png" alt="모델 성능 비교 차트" style="width: 100%; max-width: 800px; height: auto;">
+
 *그림 1: 4가지 모델의 성능 지표 비교 (정확도, F1-Score, NDCG@10, MRR)*
 
-![모델 성능 레이더 차트](/assets/img/model_performance_radar.png)
+<img src="/ProDevJune/assets/img/model_performance_radar.png" alt="모델 성능 레이더 차트" style="width: 100%; max-width: 800px; height: auto;">
+
 *그림 2: 모델별 성능 레이더 차트 - 종합적 성능 비교*
 
-![성능 개선 차트](/assets/img/performance_improvement.png)
+<img src="/ProDevJune/assets/img/performance_improvement.png" alt="성능 개선 차트" style="width: 100%; max-width: 800px; height: auto;">
+
 *그림 3: ColBERT vs BM25 성능 개선율 - 딥러닝 모델의 우수성 입증*
 
 ### 성능 비교표
@@ -201,7 +204,8 @@ param_grid = {
   - 하드웨어 최적화
   - 배치 처리 최적화
 
-![ColBERT 혼동 행렬](/assets/img/confusion_matrix_heatmap.png)
+<img src="/ProDevJune/assets/img/confusion_matrix_heatmap.png" alt="ColBERT 혼동 행렬" style="width: 100%; max-width: 600px; height: auto;">
+
 *그림 4: ColBERT 모델의 혼동 행렬 - 예측 정확도 시각화*
 
 ### 모델 비교 분석
@@ -248,10 +252,10 @@ param_grid = {
 - **Jupyter Notebook**: [모델링 노트북](/Users/jayden/Developer/Projects/IR-Competition-Report/week3/modeling_notebook.ipynb)
 - **결과 파일**: [성능 분석 결과](/Users/jayden/Developer/Projects/IR-Competition-Report/week3/results/)
 - **시각화 파일들**:
-  - [모델 성능 비교 차트](/assets/img/model_performance_comparison.png)
-  - [모델 성능 레이더 차트](/assets/img/model_performance_radar.png)
-  - [성능 개선 차트](/assets/img/performance_improvement.png)
-  - [ColBERT 혼동 행렬](/assets/img/confusion_matrix_heatmap.png)
+  - [모델 성능 비교 차트](/ProDevJune/assets/img/model_performance_comparison.png)
+  - [모델 성능 레이더 차트](/ProDevJune/assets/img/model_performance_radar.png)
+  - [성능 개선 차트](/ProDevJune/assets/img/performance_improvement.png)
+  - [ColBERT 혼동 행렬](/ProDevJune/assets/img/confusion_matrix_heatmap.png)
 
 ---
 
