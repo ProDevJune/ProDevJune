@@ -123,17 +123,6 @@ param_grid = {
 
 ## 📊 모델링 결과 분석
 
-### 모델 성능 비교 시각화
-
-![모델 성능 비교 차트](/assets/img/model_performance_comparison.png)
-*그림 1: 4가지 모델의 성능 지표 비교 (정확도, F1-Score, NDCG@10, MRR)*
-
-![모델 성능 레이더 차트](/assets/img/model_performance_radar.png)
-*그림 2: 모델별 성능 레이더 차트 - 종합적 성능 비교*
-
-![성능 개선 차트](/assets/img/performance_improvement.png)
-*그림 3: ColBERT vs BM25 성능 개선율 - 딥러닝 모델의 우수성 입증*
-
 ### 성능 비교표
 
 | 모델 | 정확도 | 정밀도 | 재현율 | F1-Score | NDCG@10 | MRR |
@@ -201,9 +190,6 @@ param_grid = {
   - 하드웨어 최적화
   - 배치 처리 최적화
 
-![ColBERT 혼동 행렬](/assets/img/confusion_matrix_heatmap.png)
-*그림 4: ColBERT 모델의 혼동 행렬 - 예측 정확도 시각화*
-
 ### 모델 비교 분석
 
 #### 성능 개선 효과
@@ -242,16 +228,6 @@ param_grid = {
 1. **모델 선택의 중요성**: 문제 특성에 맞는 모델 선택
 2. **평가 지표의 다양성**: 단일 지표가 아닌 종합적 평가
 3. **실용성 고려**: 성능과 효율성의 균형점 찾기
-
-## 🔗 관련 자료
-
-- **Jupyter Notebook**: [모델링 노트북](/Users/jayden/Developer/Projects/IR-Competition-Report/week3/modeling_notebook.ipynb)
-- **결과 파일**: [성능 분석 결과](/Users/jayden/Developer/Projects/IR-Competition-Report/week3/results/)
-- **시각화 파일들**:
-  - [모델 성능 비교 차트](/assets/img/model_performance_comparison.png)
-  - [모델 성능 레이더 차트](/assets/img/model_performance_radar.png)
-  - [성능 개선 차트](/assets/img/performance_improvement.png)
-  - [ColBERT 혼동 행렬](/assets/img/confusion_matrix_heatmap.png)
 
 ---
 
