@@ -2,7 +2,7 @@
 title: 'AI 실전 학습 경진대회 보고서 (AD / OCR / RS)'
 layout: page
 icon: fas fa-chart-line
-permalink: /ai-bootcamp/ad-ocr-rs-full-report/
+permalink: /ai-bootcamp/ad-ocr-rs-report/
 toc: true
 tags:
   - Anomaly Detection
